@@ -87,11 +87,16 @@ in index.html:
 
 git init
 create .gitignore
-virenv
-__pycache__
+-----------------
+**/__pycache__
+*.pyc
+db.sqlite3
+.idea/
+virenv/
+----------------
 python -m pip freeze > requirements.txt
 git add .
 git commit -m "initial"
-git remote add origin git@github.com:dinto/Upstoxpartner.git
+git remote add origin git@github.com:dinto/CCSBI.git
 git branch -M master
 git push -u origin master
