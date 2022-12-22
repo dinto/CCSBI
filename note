@@ -1,0 +1,97 @@
+1)python -m venv virenv
+2)virenv\Scripts\activate
+3)pip install django
+4)django-admin startproject CCSBI . 
+5)python manage.py startapp CcsbiProject
+6)'CcsbiProject', in installed apps in settings
+7)python manage.py runserver
+
+8)in view.py:
+
+def CcsbiProject(request):
+    return render(request,'index.html',{})
+
+9)mkdir CcsbiProject/templates/
+
+create index.html => CcsbiProject/templates/index.html
+
+10)create CcsbiProject/urls.py
+
+from django.urls import path
+from CcsbiProject import views
+
+urlpatterns = [
+    path('', views.CcsbiProject, name='index'),
+]
+
+11)
+inside CCSBI/urls.py=>
+from django.urls import path, include
+path('', include('CcsbiProject.urls')),
+
+
+12)#Instead of having to import Bootstrap styles into every app, we can create a template or set of templates that are shared by all the apps. 
+
+mkdir CCSBI/templates/
+create html under=> CCSBI/templates/base.html
+
+inside base.html=>
+add following lines inside base.html=>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% block page_content %}
+
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+13)
+
+change CcsbiProject->templates->index.html =>
+
+{% extends "base.html" %}
+
+{% block page_content %}
+
+{% endblock %}
+
+14)
+CCSBI/settings.py=>, update TEMPLATES:
+'DIRS': ["CCSBI/templates/"],
+
+
+
+
+15) static file adding:
+create folder static and inside css and js 
+create file js 
+in settings:
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATICFILES_DIRS=[
+os.path.join(BASE_DIR,'static')
+]
+
+
+in index.html:
+{% load static %}
+<script src={% static 'js/dashboard.js' %}></script>
+<link href={% static 'css/dashboard/dashboard.css' %} rel="stylesheet" type="text/css" />
+
+
+
+
+git init
+create .gitignore
+virenv
+__pycache__
+python -m pip freeze > requirements.txt
+git add .
+git commit -m "initial"
+git remote add origin git@github.com:dinto/Upstoxpartner.git
+git branch -M master
+git push -u origin master
