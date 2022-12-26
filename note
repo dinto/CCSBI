@@ -108,3 +108,24 @@ git commit -m "initial"
 git remote add origin git@github.com:dinto/CCSBI.git
 git branch -M master
 git push -u origin master
+
+
+============================
+Google cloud setup
+============================
+create instance in gcp
+name:ccsbi
+region:us-central1(lowa) ; Zone:us-central
+series:e2,machine type: e2-medium(2vcpu,1gb memory)
+
+firewall: tick in http and https
+click create
+
+ssh 
+
+cd /home/citsci
+sudo su
+apt-get update
+apt-get install git
+
+git clone git@github.com:dinto/CCSBI.git
