@@ -128,4 +128,28 @@ sudo su
 apt-get update
 apt-get install git
 
+cd ~/.ssh && ssh-keygen
+
+copy below content
+linux : cat id_rsa.pub 
+
+Add your key to your account via the website.
+https://github.com/settings/keys
+
+git config --global user.name "dinto"
+git config --global user.email dinto.t.d@gmail.com
+
+
 git clone git@github.com:dinto/CCSBI.git
+
+apt install python3-pip python3-dev libpq-dev nginx curl
+pip3 install --upgrade pip
+pip3 install virtualenv
+(outside of project)
+virtualenv venv
+source venv/bin/activate
+
+pip install gunicorn (local system first)
+
+
+#https://www.youtube.com/watch?v=bD75adrlkes&t=14s
