@@ -159,13 +159,28 @@ python -m pip  install gunicorn
 in settings: add allowed host = '34.171.85.158'
 
 STATIC_ROOT =os.path.join(BASE_DIR,'static/')
+python manage.py collectstatic
 python -m pip freeze > requirements.txt
+
 push into github
 
 (in gcp machine):
 
 sudo git pull origin master  
 pip install -r requirements.txt
+
+sudo apt install ufw
+sudo ufw allow 8000
+python manage.py runserver 0.0.0.0:8000
+http://34.171.85.158:8000/
+view network details->defaul->firewall rule->add firewall rule
+Name: django8000
+target tag: django8000
+source ip ranges: 0.0.0.0/0
+tcp: 8000
+ create
+
+ sudo systemctl stop nginx
 
 
 #https://www.youtube.com/watch?v=bD75adrlkes&t=14s
