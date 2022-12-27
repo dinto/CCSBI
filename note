@@ -82,6 +82,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
+or
+import os
+STATIC_ROOT =os.path.join(BASE_DIR,'static/')
+
 
 in index.html:
 {% load static %}
@@ -149,7 +153,14 @@ pip3 install virtualenv
 virtualenv venv
 source venv/bin/activate
 
-pip install gunicorn (local system first)
+python3 install gunicorn (local system first)
+python -m pip  install gunicorn
 
+in settings: add allowed host = '34.171.85.158'
+
+python -m pip freeze > requirements.txt
+push into github
+
+git pull origin master  (in gcp machine)
 
 #https://www.youtube.com/watch?v=bD75adrlkes&t=14s
