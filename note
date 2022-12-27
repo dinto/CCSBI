@@ -180,7 +180,73 @@ source ip ranges: 0.0.0.0/0
 tcp: 8000
  create
 
- sudo systemctl stop nginx
+ python3 manage.py runserver 0.0.0.0:80
+ http://34.171.85.158/
 
+ gunicorn --bind 0.0.0.0:8000 CCSBI.wsgi
+
+ sudo vim /etc/systemd/system/gunicorn.socket
+
+[Unit]
+Description=gunicorn.socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+
+
+sudo vim /etc/systemd/system/gunicorn.service
+
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=citsci
+Group=www-data
+WorkingDirectory=/home/citsci/CCSBI
+ExecStart=/home/citsci/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          CCSBI.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
+sudo systemctl status gunicorn.socket  (gunicorn socket is active but gunicorn service not active)
+sudo systemctl status gunicorn
+
+curl --unix-socket /run/gunicorn.sock localhost
+sudo systemctl status gunicorn
+
+sudo vim /etc/nginx/sites-available/CCSBI
+
+server {
+    listen 80;
+    server_name 34.171.85.158;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/citsci/CCSBI;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/CCSBI /etc/nginx/sites-enabled/
+nginx -t
+sudo systemctl restart nginx
+ufw allow 'Nginx Full'
+ufw delete allow 8000
 
 #https://www.youtube.com/watch?v=bD75adrlkes&t=14s
