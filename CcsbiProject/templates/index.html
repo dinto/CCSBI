@@ -1,4 +1,94 @@
+
+<style>
+
+
+    .observation {
+      --bg-color: #ffd861;
+      --bg-color-light: #ffeeba;
+      --text-color-hover: #4C5656;
+      --box-shadow-color: rgba(255, 215, 97, 0.48);
+    }
+    .volunteer{
+      --bg-color: #ffd861;
+      --bg-color-light: #92f1c2;
+      --text-color-hover: #4C5656;
+      --box-shadow-color: rgba(64, 243, 10, 0.651);
+    }
+
+    .dataset{
+      --bg-color: #ffd861;
+      --bg-color-light: #92f1c2;
+      --text-color-hover: #4C5656;
+      --box-shadow-color: rgb(247, 152, 152);
+    }
+    .institue{
+      --bg-color: #ffd861;
+      --bg-color-light: #92f1c2;
+      --text-color-hover: #4C5656;
+      --box-shadow-color: rgba(10, 43, 233, 0.281);
+    }
+    
+    
+    
+    .card {
+      width: 220px;
+      height: 321px;
+      background: #fff;
+      border-top-right-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+      transition: all 0.3s ease-out;
+      text-decoration: none;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px) scale(1.005) translateZ(0);
+      box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+        0 24px 46px var(--box-shadow-color);
+    }
+    
+    .card:hover .overlay {
+      transform: scale(4) translateZ(0);
+    }
+    
+
+    
+    .card:hover p {
+      color: var(--text-color-hover);
+    }
+    
+    .card:active {
+      transform: scale(1) translateZ(0);
+      box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+        0 15px 24px var(--box-shadow-color);
+    }
+    
+    .card p {
+      font-size: 17px;
+      color: #4C5656;
+      margin-top: 30px;
+      z-index: 1000;
+      transition: color 0.3s ease-out;
+    }
+    .overlay {
+      width: 118px;
+      position: absolute; 
+      height: 118px;
+      border-radius: 50%;
+      background: var(--bg-color);
+      top: 70px;
+      left: 50px;
+      z-index: 0;
+      transition: transform 0.3s ease-out;
+    }
+    </style>
 {% extends "base.html" %}
+
 {% load static %}
 
 {% block content %}
@@ -102,7 +192,7 @@
     <br>
     <div class="row">
         <div class="col" style="width:100%">
-            <div class="card text-center" >
+            <div class="card text-center institue" >
                 <div class="card-body" style="height: 300px;">
                     <img src="{% static '/images/icon5.png' %}" style="height:75px;"    alt="...">
                     <h3>50 +    </h3>
@@ -120,7 +210,7 @@
 
         <hr>
         <div class="col">
-            <div class="card text-center">
+            <div class="card text-center volunteer">
                 <div class="card-body" style="height: 300px;">
                     <img src="{% static '/images/icon2.png' %}"   alt="...">
                     <h3>500 + Volunteers </h3>
@@ -133,7 +223,7 @@
         </div>
         <hr>
         <div class="col" >
-            <div class="card text-center  text-white bg-warning " >
+            <div class="card text-center  observation " >
                 <div class="card-body" style="height: 300px;">
                     <img src="{% static '/images/icon3.png' %}"   alt="...">
                     <h3>5000 + Observations </h3>
@@ -145,7 +235,7 @@
         </div>
         <hr>
         <div class="col">
-            <div class="card text-center">
+            <div class="card text-center dataset">
                 <div class="card-body" style="height: 300px;">
                     <img src="{% static '/images/icon4.png' %}"   alt="...">
                     <h3>DataSets  </h3>
