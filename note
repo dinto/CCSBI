@@ -250,3 +250,54 @@ ufw allow 'Nginx Full'
 ufw delete allow 8000
 
 #https://www.youtube.com/watch?v=bD75adrlkes&t=14s
+
+=========================================================
+
+point your domain to google clouddns
+go to "network services" under networking -> cloud dns->enable 
+create dns zone =>
+zone type: public
+zone name =>citsciindia
+dns name: citsciindia.in.
+description: citsciindia.in
+create
+
+add record set=>
+
+
+dns name: ccsbi.citsciindia.in.	
+record type : A	
+ip address : 34.171.85.158
+
+dns name: www.ccsbi.citsciindia.in.	
+record type : cname	
+cname : ccsbi.citsciindia.in.	
+
+
+check in : https://dnschecker.org/ 
+
+
+ccsbi.citsciindia.in
+
+reference: https://www.youtube.com/watch?v=1lsFYHtWbEc
+
+=======================================================
+How to Safely Redirect HTTP to HTTPS in Google Cloud Platform
+=======================================================
+https load balacer:
+
+create load balancer=>start configuration (under https load balancing)=>
+select  From Internet to my VMs or serverless services
+select  Global HTTP(S) Load Balancer
+
+click on continue
+
+name=> citsciindia-https
+
+frontend configuration=>
+ name:citsciindia-https
+protocol: https
+
+certificate=>create new certificate
+name: my-ssl-cert
+select create google-managed-certificate
