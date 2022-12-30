@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-b=+j7_smh(0*a-kyl_yk4+!r^_d+7%^dhp@9$qlr8*=av0cqah
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['34.171.85.158','ccsbi.citsciindia.in','www.ccsbi.citsciindia.in']
+ALLOWED_HOSTS = ['34.171.85.158','ccsbi.citsciindia.in','www.ccsbi.citsciindia.in','ccsbi.kfri.res.in']
 
 
 # Application definition
