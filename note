@@ -296,20 +296,64 @@ reference: https://www.youtube.com/watch?v=1lsFYHtWbEc
 =======================================================
 How to Safely Redirect HTTP to HTTPS in Google Cloud Platform
 =======================================================
-https load balacer:
+goto instance group page:
+https://console.cloud.google.com/compute/instanceGroups/list?_ga=2.209932887.373534072.1672298415-236081045.1671440915&project=centered-sight-372111
 
-create load balancer=>start configuration (under https load balancing)=>
+create instance group
+select "new unmanaged instance group"
+name:citsciindia-instance-group
+select vm instance->create
+
+
+network services-> create load balancer=>start configuration (under https load balancing)=>
 select  From Internet to my VMs or serverless services
 select  Global HTTP(S) Load Balancer
 
 click on continue
 
-name=> citsciindia-https
+name=> citsciindia-load-balancer
+
+backend configuration->create backend service->
+name:citsciindia-backend
+under health check->create health check->
+name: citsciindia-healthcheck
+protocol:http
+check-interval:30
+save 
+
+under backend=> select instance group 
+port numbers: 80
+create
+
 
 frontend configuration=>
- name:citsciindia-https
+ name:citsciindia-frontend
 protocol: https
+ip address=>create ip address
+name:front-end-ip-citsciindia ->click reserve
 
 certificate=>create new certificate
-name: my-ssl-cert
+name: citsciindia-ssl-cert
 select create google-managed-certificate
+domains: citsciindia.in
+create
+check-> Enable http to Https redirect 
+done 
+
+create
+
+
+open citsciindia-load-balancer->
+copy ip 
+35.241.43.162
+change A record to this ip
+
+ssl certificate checking :
+https://www.ssllabs.com/ssltest/analyze.html?
+
+
+https verifing:
+1)verify your website pointing towards frontend LB
+2)check the state of google managed cert added on the front end of LB
+3)verify that frontend is using HTTPS and backend is using HTTP
+4)verify your ssl cert
