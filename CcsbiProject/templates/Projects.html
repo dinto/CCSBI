@@ -6,13 +6,14 @@
       align-items : center;
       justify-content : center;
       padding : 30px;  
-      margin-left: 10%;
+      margin-left: 20%;
     }
     
     .container1 .card {
       position: relative;
-      width : 300px;
-      height : 215px;  
+     /* width : 300px;
+      height : 215px;  */
+      height : 320px;  
       
       background-color : #fff;
       margin : 30px 10px;
@@ -21,21 +22,23 @@
       display : flex;
       flex-direction : column;
       box-shadow : 0 5px 20px rgba(0,0,0,0.5);
-      transition : 0.3s ease-in-out;
+      /* transition : 0.3s ease-in-out;*/
       border-radius : 15px;
     }
+    /* 
     .container1 .card:hover {
       height : 320px;   
       width : 700px;  
     }
-    
+    */
     
     .container1 .card .image {
       position : relative;
       width : 260px;
-      height : 260px;
+      /*height : 260px;*/
       
-      top : -40%;
+      top : -25%;
+      margin-left: 35%;
       left: 8px;
       box-shadow : 0 5px 20px rgba(0,0,0,0.2);
       z-index : 1;
@@ -53,13 +56,14 @@
       color : #111;
       text-align : center;
       
-      visibility : hidden;
+      visibility : visible;
       opacity : 0;
-      transition : 0.3s ease-in-out;
+      /* transition : 0.3s ease-in-out;*/
         
     }
-    
-    .container1 .card:hover .content {
+    /* 
+    .container1 .card:hover
+     .content {
        margin-top : 30px;
        margin-left : 30px;
        visibility : visible;
@@ -67,6 +71,7 @@
        transition-delay: 0.2s;
       
     }
+    */
     </style>
     
     {% extends "base.html" %}
@@ -77,17 +82,16 @@
 <br>
 <div class="container">
   <div class="center" style="margin-left: 15%;" >
-    <img src="{% static '/images/projects.png' %}" width="700px" height="600px"  alt="...">
+    <!-- <img src="{% static '/images/projects.png' %}" width="700px" height="600px"  alt="...">-->
   </div>
   
   <br>
   <br>
   <h2 style="color: #1E93FE;">Explore and contribute !</h2>
-  <br>
   <hr  color="red" style="margin-left:0px; height: 5px;width:15%;">
 </div>
 
-
+<br>
 <div class="container">
   <h3>The Fruit Bat
     Project</h3>
@@ -102,15 +106,16 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/bat.jpg' %}">
       </div>
-      <div class = content>
+      <div style="margin-top: -5%;">
 
-        <p>After the spill of zoonotic diseases like Nipah and covid 19, human attitude towards bats and their roosts has shifted
-          significantly. Many populations have been chased away from their native roost sites across Kerala, this may alter the
-          population status and natural distribution of the species. For the conservation and proper management of bats, we
-          have to understand their ecology, specifically roosting sites and feeding grounds. The fruit bat project is aimed at
-          identifying and mapping the roosting sites of a common fruit bat, the Indian flying fox; Pteropus medius. You may
-          find them roosting on tall, wide trees, mostly in disturbed habitats. Data is collected through an online form. Click
-          here to learn more and to participate in the fruit bat project</p>
+        <p class="text-justify"   >
+          After the spill of zoonotic diseases like Nipah and covid 19, human attitude towards bats and their roosts has shifted significantly. 
+          Many populations have been chased away from their native roost sites across Kerala, altering the population status and natural distribution of the species. 
+          For the conservation and proper management of bats, we have to understand their  ecology, specifically roosting sites and feeding grounds. 
+          The fruit bat project is aimed at identifying and mapping the roosting sites of a common fruit bat, the Indian flying fox; <i>Pteropus medius</i>. 
+          You may find them roosting on tall, wide trees, mostly in disturbed habitats. Data is collected through an online form. <a href="https://thefruitbatproject.weebly.com/"  target="_blank">Click here</a> to learn more and
+           to participate in the fruit bat project.
+          </p>
       </div>
     </div>    
   </div>
@@ -122,19 +127,19 @@
   
   <br>
   <br>
-    <div class = container1>
+    <div class = container1   >
   
   
       <div class = card>
         <div class = image>
           <img href = "#" src ="{% static '/images/invasionwatch.jpg' %}">
         </div>
-        <div class = content>
-  
-          <p>Across the world, natural habitats are being lost to invasive species. In India, species like Lantana camara and Giant African snails are taking over natural habitats,
-             causing irreversible damages. The distribution and rate of spread of such species should be monitored for their proper management. This project is aimed at mapping invasive
-              flora and fauna across the country. This will help us understand the trends of invasive spread, with which we can develop local, species-specific management plans. 
-              You can contribute by recording any invasive species from anywhere within the country.
+        <div style="margin-top: -5%;" >
+          <p class="text-justify" >
+            Across the world, natural habitats are being lost to invasive species. In India, species like <i>Lantana camara </i> and Giant African snails are taking over natural habitats, 
+            causing irreversible damages. The distribution and rate of spread of such species should be monitored for their proper management. This project is aimed at mapping invasive 
+            flora and fauna across the country. This will help us understand the trends of invasive spread, with which we can develop local, species-specific management plans. 
+            You can contribute by recording any invasive species from anywhere within the country. <a href="https://www.inaturalist.org/projects/invasion-watch"  target="_blank">Click here</a> to learn more about these invasive species and how to map them. 
 
           </p>
         </div>
@@ -155,12 +160,14 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/pollinator.jpg' %}">
       </div>
-      <div class = content>
+      <div style="margin-top: -5%;">
 
-        <p>Loss of pollinator diversity has started to threaten the ecosystem stability as well as the world economy.
-           Raging temperatures and loss of natural habitats make our diverse insect populations vulnerable. We might have already lost many populations,
-            but we lack any scientific data as no proper monitoring for pollinators is carried out nationally. To avoid further decline we need to look at the effect of climate change on  population and distribution trends of major pollinator species. This project is aimed at understanding the pollinator dependence on native plants, population and  distribution status and the challenges faced by them.
-           Follow our social media accounts for further updates.  </p>
+        <p class="text-justify" >
+          Loss of pollinator diversity has started to threaten the ecosystem stability as well as the world economy. 
+          Raging temperatures and loss of natural habitats make our diverse insect populations vulnerable. We might have already lost many populations,
+           but we lack any scientific data as no proper monitoring for pollinators is carried out nationally. To avoid further decline we need to look at the effect
+            of climate change on  population and distribution trends of major pollinator species. This project is aimed at understanding the pollinator dependence on native plants, 
+          population and  distribution status and the challenges faced by them. Follow our social media accounts for further updates.    </p>
       </div>
     </div>    
   </div>
@@ -179,11 +186,12 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/forestbiodiversitydatabase.jpg' %}">
       </div>
-      <div class = content>
+      <div style="margin-top: -5%;">
 
-        <p>Our tropical climate makes our forests one of the most diverse ecosystems in the world. Effect of anthropogenic influences and climate change is concerning,
-           shouting out the need for frequent monitoring of biodiversity throughout our protected areas. A biodiversity database for each protected area is being developed 
-           by carrying out bioblitz-like surveys across the state. Locality specific databases will be highly beneficial for identifying hotspots and maintaining vulnerable habitats. 
+        <p class="text-justify" >
+          Our tropical climate makes our forests one of the most diverse ecosystems in the world. Effect of anthropogenic influences and climate change is concerning, 
+          shouting out the need for frequent monitoring of biodiversity throughout our protected areas. A biodiversity database for each protected area is being developed 
+          by carrying out bioblitz-like surveys across the state. Locality specific databases will be highly beneficial for identifying hotspots and maintaining vulnerable habitats.
            Data will be published in public data repositories facilitating easy access for further research and activities.
         </p>
       </div>
@@ -192,7 +200,7 @@
 
   <br>
 <div class="container">
-  <h3>Local-Biodiversity database </h3>
+  <h3>Institutional-Biodiversity database </h3>
 </div>
 
 <br>
@@ -204,11 +212,14 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/localbiodiversity.jpg' %}">
       </div>
-      <div class = content>
+      <div style="margin-top: -5%;">
+        <br>
 
-        <p>Urban wildlife is the least studied biological resource around us. We currently lack data on locality specific urban biodiversity.
+        <p class="text-justify">
+          Urban wildlife is the least studied biological resource around us. We currently lack data on locality specific urban biodiversity.
            A ward-level urban-biodiversity database is being generated in collaboration with local governing bodies. 
-          This data can be very useful in identifying biodiversity hotspots and creating efficient management policies. </p>
+          This data can be very useful in identifying biodiversity hotspots and creating efficient management policies.   
+        </p>
       </div>
     </div>    
   </div>
@@ -227,12 +238,14 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/dataaccumulation.jpg' %}">
       </div>
-      <div class = content>
+      <div style="margin-top: -5%;">
 
-        <p>Forest departments and other agencies have been conducting valuable biodiversity surveys during the past years. 
+        <p class="text-justify">
+          Forest departments and other agencies have been conducting valuable biodiversity surveys during the past years. 
           This data could be highly beneficial for researchers and students, but unfortunately it is inaccessible to the public. 
           Publicising biodiversity data would help in minimising the effort on further research and conservation activities. 
-          This project is aimed at the collection, verification and publicising of this data to public databases such as GBIF. </p>
+          This project is aimed at the collection, verification and publicising of this data to public databases such as GBIF
+        </p>
       </div>
     </div>    
   </div>
