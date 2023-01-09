@@ -1,83 +1,151 @@
-<style>
-    .container1 {
-      position : relative;
-      width : 1100px;
-      display : flex;
-      align-items : center;
-      justify-content : center;
-      padding : 30px;  
-      margin-left: 20%;
-    }
-    
-    .container1 .card {
-      position: relative;
-     /* width : 300px;
-      height : 215px;  */
-      height : 320px;  
-      
-      background-color : #fff;
-      margin : 30px 10px;
-      padding : 20px 15px;
-      
-      display : flex;
-      flex-direction : column;
-      box-shadow : 0 5px 20px rgba(0,0,0,0.5);
-      /* transition : 0.3s ease-in-out;*/
-      border-radius : 15px;
-    }
-    /* 
-    .container1 .card:hover {
-      height : 320px;   
-      width : 700px;  
-    }
-    */
-    
-    .container1 .card .image {
-      position : relative;
-      width : 260px;
-      /*height : 260px;*/
-      
-      top : -25%;
-      margin-left: 35%;
-      left: 8px;
-      box-shadow : 0 5px 20px rgba(0,0,0,0.2);
-      z-index : 1;
-    }
-    
-    .container1 .card .image img {
-      max-width : 100%;
-      border-radius : 15px;
-    }
-    
-    .container1 .card .content {
-      position : relative;
-      top : -140px;
-      padding : 10px 15px;
-      color : #111;
-      text-align : center;
-      
-      visibility : visible;
-      opacity : 0;
-      /* transition : 0.3s ease-in-out;*/
-        
-    }
-    /* 
-    .container1 .card:hover
-     .content {
-       margin-top : 30px;
-       margin-left : 30px;
-       visibility : visible;
-       opacity : 1;
-       transition-delay: 0.2s;
-      
-    }
-    */
-    </style>
-    
+
     {% extends "base.html" %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+    </style>
     {% load static %}
     
     {% block content %}
+<style>
+  #invasion #text {
+    position:relative;
+    visibility:hidden;
+  }
+  #invasion:hover #text {
+    visibility:visible;
+    /**transition: .5s ease;**/
+    opacity: 1;
+    left: 50%;
+    top:-55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 7px;
+  }
+  #invasion:hover #img {
+    opacity: 0.1;
+  }
+  #invasion{
+    height: 36%;
+  }
+  #bat #text {
+    position:relative;
+    visibility:hidden;
+  }
+  #bat:hover #text {
+    visibility:visible;
+    /**transition: .5s ease;**/
+    opacity: 1;
+    left: 50%;
+    top:-55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 7px;
+  }
+  #bat:hover #img {
+    opacity: 0.1;
+  }
+  #bat{
+    height: 36%;
+  }
+  #pollinator #text {
+    position:relative;
+    visibility:hidden;
+  }
+  #pollinator:hover #text {
+    visibility:visible;
+    /**transition: .5s ease;**/
+    opacity: 1;
+    left: 50%;
+    top:-55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 7px;
+  }
+  #pollinator:hover #img {
+    opacity: 0.1;
+  }
+  #pollinator{
+    height: 50%;
+  }
+  #forestbiodiversitydatabase #text {
+    position:relative;
+    visibility:hidden;
+  }
+  #forestbiodiversitydatabase:hover #text {
+    visibility:visible;
+    /**transition: .5s ease;**/
+    opacity: 1;
+    left: 50%;
+    top:-55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 7px;
+  }
+  #forestbiodiversitydatabase:hover #img {
+    opacity: 0.1;
+  }
+  #forestbiodiversitydatabase{
+    height: 50%;
+  }
+  
+  #localbiodiversity #text {
+    position:relative;
+    visibility:hidden;
+  }
+  #localbiodiversity:hover #text {
+    visibility:visible;
+    /**transition: .5s ease;**/
+    opacity: 1;
+    left: 50%;
+    top:-55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 7px;
+  }
+  #localbiodiversity:hover #img {
+    opacity: 0.1;
+  }
+  #localbiodiversity{
+    height: 50%;
+  }
+
+
+</style>
         
 <br>
 <div class="container" >
@@ -93,33 +161,97 @@
 
 <br>
 <div class="container">
-  <h3>The Fruit Bat
-    Project</h3>
-</div>
+  <div class="row">
 
-<br>
-<br>
-  <div class = container1>
-
-
-    <div class = card>
-      <div class = image>
-        <img href = "#" src ="{% static '/images/bat.jpg' %}">
-      </div>
-      <div style="margin-top: -5%;">
-
-        <p class="text-justify"   >
+    <div class="col-sm-6">
+      <h3>The Fruit Bat Project</h3>
+      <div class="card " id="bat" >
+        <img href = "#" id="img" src ="{% static '/images/bat1.jpg' %}" style="height: 100%;">
+        <p class="text-justify"  id="text" >
           After the spill of zoonotic diseases like Nipah and covid 19, human attitude towards bats and their roosts has shifted significantly. 
           Many populations have been chased away from their native roost sites across Kerala, altering the population status and natural distribution of the species. 
           For the conservation and proper management of bats, we have to understand their  ecology, specifically roosting sites and feeding grounds. 
           The fruit bat project is aimed at identifying and mapping the roosting sites of a common fruit bat, the Indian flying fox; <i>Pteropus medius</i>. 
-          You may find them roosting on tall, wide trees, mostly in disturbed habitats. Data is collected through an online form. <a href="https://thefruitbatproject.weebly.com/"  target="_blank">Click here</a> to learn more and
-           to participate in the fruit bat project.
+          You may find them roosting on tall, wide trees, mostly in disturbed habitats. Data is collected through an online form. 
+           <a href="https://thefruitbatproject.weebly.com/"  class="btn btn-primary"  target="_blank">Know More</a>
           </p>
+          
+
       </div>
-    </div>    
+
+    </div>
+    <div class="col-sm-6">
+      <h3>Invasion watch India</h3>
+      <div class="card " id="invasion">
+        <img href = "#" id="img" src ="{% static '/images/invasionwatch.jpg' %}" style="height: 100%;">
+        <p class="text-justify"  id="text">
+          Across the world, natural habitats are being lost to invasive species. In India, species like <i>Lantana camara </i> and Giant African snails are taking over natural habitats, 
+          causing irreversible damages. The distribution and rate of spread of such species should be monitored for their proper management. This project is aimed at mapping invasive 
+          flora and fauna across the country. This will help us understand the trends of invasive spread, with which we can develop local, species-specific management plans. 
+          You can contribute by recording any invasive species from anywhere within the country. <a href="https://www.inaturalist.org/projects/invasion-watch"  class="btn btn-primary" target="_blank">Know More</a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="row" style="margin-top: -40%;">
+    <div class="col-sm-6">
+      <h3>Pollinator count</h3>
+      <div class="card "  id="pollinator">
+        <img href = "#" src ="{% static '/images/pollinator.jpg' %}"  id="img"  style="height: 100%;">
+        <p class="text-justify" id="text">
+          Loss of pollinator diversity has started to threaten the ecosystem stability as well as the world economy. 
+          Raging temperatures and loss of natural habitats make our diverse insect populations vulnerable. We might have already lost many populations,
+           but we lack any scientific data as no proper monitoring for pollinators is carried out nationally. To avoid further decline we need to look at the effect
+            of climate change on  population and distribution trends of major pollinator species. This project is aimed at understanding the pollinator dependence on native plants, 
+          population and  distribution status and the challenges faced by them. Follow our social media accounts for further updates.    </p>
+      </div>
+  
+    </div>
+
+
+    <div class="col-sm-6">
+      <h3>Forest Biodiversity database</h3>
+      <div class="card " id="forestbiodiversitydatabase">
+        <img href = "#" src ="{% static '/images/forestbiodiversitydatabase.jpg' %}" id="img"  style="height: 100%;">
+        <p class="text-justify"  id="text">
+          Our tropical climate makes our forests one of the most diverse ecosystems in the world. Effect of anthropogenic influences and climate change is concerning, 
+          shouting out the need for frequent monitoring of biodiversity throughout our protected areas. A biodiversity database for each protected area is being developed 
+          by carrying out bioblitz-like surveys across the state. Locality specific databases will be highly beneficial for identifying hotspots and maintaining vulnerable habitats.
+           Data will be published in public data repositories facilitating easy access for further research and activities.
+        </p>
+      </div>
+
+    </div>
+
+ 
+
+  </div>
+  <div class="row" style="margin-top: -20%;">
+    <div class="col-sm-6">
+      <h3>Institutional-Biodiversity database</h3>
+      <div class="card " id="localbiodiversity" >
+        <img href = "#" src ="{% static '/images/localbiodiversity.jpg' %}" id="img"  style="height: 100%;">
+        <p class="text-justify" id="text">
+          Urban wildlife is the least studied biological resource around us. We currently lack data on locality specific urban biodiversity.
+           A ward-level urban-biodiversity database is being generated in collaboration with local governing bodies. 
+          This data can be very useful in identifying biodiversity hotspots and creating efficient management policies.   
+        </p>
+
+      </div>
+
+    </div>
   </div>
 
+
+</div>
+
+
+<!--
   <br>
   <div class="container">
     <h3>Invasion watch India</h3>
@@ -134,15 +266,7 @@
         <div class = image>
           <img href = "#" src ="{% static '/images/invasionwatch.jpg' %}">
         </div>
-        <div style="margin-top: -5%;" >
-          <p class="text-justify" >
-            Across the world, natural habitats are being lost to invasive species. In India, species like <i>Lantana camara </i> and Giant African snails are taking over natural habitats, 
-            causing irreversible damages. The distribution and rate of spread of such species should be monitored for their proper management. This project is aimed at mapping invasive 
-            flora and fauna across the country. This will help us understand the trends of invasive spread, with which we can develop local, species-specific management plans. 
-            You can contribute by recording any invasive species from anywhere within the country. <a href="https://www.inaturalist.org/projects/invasion-watch"  target="_blank">Click here</a> to learn more about these invasive species and how to map them. 
 
-          </p>
-        </div>
       </div>    
     </div>
 
@@ -160,15 +284,7 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/pollinator.jpg' %}">
       </div>
-      <div style="margin-top: -5%;">
 
-        <p class="text-justify" >
-          Loss of pollinator diversity has started to threaten the ecosystem stability as well as the world economy. 
-          Raging temperatures and loss of natural habitats make our diverse insect populations vulnerable. We might have already lost many populations,
-           but we lack any scientific data as no proper monitoring for pollinators is carried out nationally. To avoid further decline we need to look at the effect
-            of climate change on  population and distribution trends of major pollinator species. This project is aimed at understanding the pollinator dependence on native plants, 
-          population and  distribution status and the challenges faced by them. Follow our social media accounts for further updates.    </p>
-      </div>
     </div>    
   </div>
 
@@ -186,15 +302,7 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/forestbiodiversitydatabase.jpg' %}">
       </div>
-      <div style="margin-top: -5%;">
 
-        <p class="text-justify" >
-          Our tropical climate makes our forests one of the most diverse ecosystems in the world. Effect of anthropogenic influences and climate change is concerning, 
-          shouting out the need for frequent monitoring of biodiversity throughout our protected areas. A biodiversity database for each protected area is being developed 
-          by carrying out bioblitz-like surveys across the state. Locality specific databases will be highly beneficial for identifying hotspots and maintaining vulnerable habitats.
-           Data will be published in public data repositories facilitating easy access for further research and activities.
-        </p>
-      </div>
     </div>    
   </div>
 
@@ -212,15 +320,7 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/localbiodiversity.jpg' %}">
       </div>
-      <div style="margin-top: -5%;">
-        <br>
 
-        <p class="text-justify">
-          Urban wildlife is the least studied biological resource around us. We currently lack data on locality specific urban biodiversity.
-           A ward-level urban-biodiversity database is being generated in collaboration with local governing bodies. 
-          This data can be very useful in identifying biodiversity hotspots and creating efficient management policies.   
-        </p>
-      </div>
     </div>    
   </div>
 
@@ -238,17 +338,9 @@
       <div class = image>
         <img href = "#" src ="{% static '/images/dataaccumulation.jpg' %}">
       </div>
-      <div style="margin-top: -5%;">
 
-        <p class="text-justify">
-          Forest departments and other agencies have been conducting valuable biodiversity surveys during the past years. 
-          This data could be highly beneficial for researchers and students, but unfortunately it is inaccessible to the public. 
-          Publicising biodiversity data would help in minimising the effort on further research and conservation activities. 
-          This project is aimed at the collection, verification and publicising of this data to public databases such as GBIF
-        </p>
-      </div>
     </div>    
   </div>
-  
+  !-->
 
     {% endblock content %}
