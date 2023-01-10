@@ -1,5 +1,29 @@
+<style>
+    .img-wrapper {  
+      overflow: hidden; 
+    }
+    
+    .inner-img {
+      transition: 0.3s;
+    }
+    
+    .inner-img:hover {
+      transform: scale(1.1);
+      
+    }
+    .inner-img:hover .blockquote {
+    visibility:visible;
+
+  }
+    
+
+    
+    
+</style>
 {% extends "base.html" %}
+
 {% load static %}
+
 
 {% block content %}
 <br>
@@ -8,66 +32,77 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-7" style="padding: 0px;">
+        <div class="col-md-6" style="padding: 0px;" >
             
-            <div class="card text-center "  style="background-color: rgb(3,122,146);">
-                <div class="card-body" style="height: 300px;">
+            <div class="card text-center img-wrapper " >
+                <img src="{% static '/images/Events1.JPG' %}" class="inner-img" >
+                <blockquote class="blockquote" style="margin-top: -37%;font-weight: bold;color: white;">
+ 
+                    <p class="quote">  Biodiversity assessment workshop & introduction to ‘iNaturalist’ - a citizen science platform </p>
+                    <p class="author">— Vivekananda College Kizhoor Kunnamkulam</p>
+                    <a href=""  class="btn btn-primary"  target="_blank">Know More</a>
+                    <hr>
+                  </blockquote>
 
-                      
-                    
-                </div>   
             </div>
         </div>
-        <div class="col-md-5" style="padding: 0px;">
+        <div class="col-md-6" style="padding: 0px;" >
             
-            <div class="card text-center "   style="background-color: rgb(28,58,92);">
-                <div class="card-body" style="height: 300px;">
-                    <h3>50 +    </h3>
-                    <h3>Institutions</h3>
-                    <p>Actively participating in 
-    
-                        this citizen Science 
-                        
-                        Intitiative</p>
-                    
-                </div>   
+            <div class="card text-center img-wrapper " >
+                <img src="{% static '/images/Events1.JPG' %}" class="inner-img">
+
             </div>
     
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4" style="padding: 0px;">
-            <div class="card text-center"  style="background-color: rgb(30,92,104);" >
-                <div class="card-body" style="height: 300px;">
-                    <h3>50 +    </h3>
-                    <h3>Institutions</h3>
-                    <p>Actively participating in 
-    
-                        this citizen Science 
-                        
-                        Intitiative</p>
-                    
-                </div>   
+        <div class="col-md-6" style="padding: 0px;">
+            <div class="card text-center img-wrapper"   >
+                <img src="{% static '/images/Events1.JPG' %}" class="inner-img">
+                <blockquote class="blockquote" style="margin-top: -44%;font-weight: bold;color: white;">
+ 
+                    <p class="quote">  Biodiversity assessment workshop & introduction to ‘iNaturalist’ - a citizen science platform </p>
+                    <p class="author">— Vivekananda College Kizhoor Kunnamkulam</p>
+                    <a href=""  class="btn btn-primary"  target="_blank">Know More</a>
+                    <hr>
+                  </blockquote>
+
             </div>
     
         </div>
         
-        <div class="col-md-8" style="padding: 0px;">
+        <div class="col-md-6" style="padding: 0px;">
             
-            <div class="card text-center "  style="background-color: rgb(237,168,18);">
-                <div class="card-body" style="height: 300px;">
-                    <h3>50 +    </h3>
-                    <h3>Institutions</h3>
-                    <p>Actively participating in 
-    
-                        this citizen Science 
-                        
-                        Intitiative</p>
-                    
-                </div>   
+            <div class="card text-center img-wrapper"   >
+                <img src="{% static '/images/Events1.JPG' %}" class="inner-img">
+                <blockquote class="blockquote" style="margin-top: -44%;font-weight: bold;color: white;">
+ 
+                    <p class="quote">  Biodiversity assessment workshop & introduction to ‘iNaturalist’ - a citizen science platform </p>
+                    <p class="author">— Vivekananda College Kizhoor Kunnamkulam</p>
+                    <a href=""  class="btn btn-primary"  target="_blank">Know More</a>
+                    <hr>
+                  </blockquote>
+
             </div>
     
         </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-12" >
+            
+        <div class="jumbotron">
+            <blockquote class="blockquote">
+                <svg viewBox="0 0 512 512" width="100" title="quote-left" class="quote-icon">
+                  <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z" />
+                </svg>
+                <p class="quote">Plans to protect air and water, wilderness and nature are in fact plans to protect man. </p>
+                <p class="author">— Stewart Udall</p>
+                <hr>
+              </blockquote>
+          </div>
+
     </div>
     
 </div>
