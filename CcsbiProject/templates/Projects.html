@@ -1,7 +1,12 @@
 
     {% extends "base.html" %}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
+
+    {% load static %}
+    
+    {% block content %}
+<style>
+  
       /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -37,11 +42,6 @@
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
-    </style>
-    {% load static %}
-    
-    {% block content %}
-<style>
   #invasion #text {
     position:relative;
     visibility:hidden;
@@ -144,6 +144,9 @@
   #localbiodiversity{
     height: 50%;
   }
+  #text{
+    font-family: Merriweather;font-size: 18px;
+  }
 
 
 </style>
@@ -165,10 +168,11 @@
   <div class="row">
 
     <div class="col-sm-6">
-      <h3>The Fruit Bat Project</h3>
+      <h2 ><b>The Fruit Bat Project</b></h2>
       <div class="card " id="bat" >
         <img href = "#" id="img" src ="{% static '/images/bat1.jpg' %}" style="height: 100%;">
-        <p class="text-justify"  id="text" >
+        <br>
+        <p class="text-justify"  id="text"  >
           After the spill of zoonotic diseases like Nipah and covid 19, human attitude towards bats and their roosts has shifted significantly. 
           Many populations have been chased away from their native roost sites across Kerala, altering the population status and natural distribution of the species. 
           For the conservation and proper management of bats, we have to understand their  ecology, specifically roosting sites and feeding grounds. 
@@ -182,7 +186,7 @@
 
     </div>
     <div class="col-sm-6">
-      <h3>Invasion watch India</h3>
+      <h2 ><b>Invasion watch India</b></h2>
       <div class="card " id="invasion">
         <img href = "#" id="img" src ="{% static '/images/invasionwatch.jpg' %}" style="height: 100%;">
         <p class="text-justify"  id="text">
@@ -201,9 +205,10 @@
   </div>
   <div class="row" style="margin-top: -40%;">
     <div class="col-sm-6">
-      <h3>Pollinator count</h3>
+      <h2 ><b>Pollinator count</b></h2>
       <div class="card "  id="pollinator">
         <img href = "#" src ="{% static '/images/pollinator.jpg' %}"  id="img"  style="height: 100%;">
+        <br>
         <p class="text-justify" id="text">
           Loss of pollinator diversity has started to threaten the ecosystem stability as well as the world economy. 
           Raging temperatures and loss of natural habitats make our diverse insect populations vulnerable. We might have already lost many populations,
@@ -216,7 +221,7 @@
 
 
     <div class="col-sm-6">
-      <h3>Forest Biodiversity database</h3>
+      <h2 ><b>Forest Biodiversity database</b></h2>
       <div class="card " id="forestbiodiversitydatabase">
         <img href = "#" src ="{% static '/images/forestbiodiversitydatabase.jpg' %}" id="img"  style="height: 100%;">
         <p class="text-justify"  id="text">
@@ -234,7 +239,7 @@
   </div>
   <div class="row" style="margin-top: -20%;">
     <div class="col-sm-6">
-      <h3>Institutional-Biodiversity database</h3>
+      <h2 ><b>Institutional-Biodiversity database</b></h2>
       <div class="card " id="localbiodiversity" >
         <img href = "#" src ="{% static '/images/localbiodiversity.jpg' %}" id="img"  style="height: 100%;">
         <p class="text-justify" id="text">
