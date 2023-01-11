@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href=" {% static '/css/main.css' %} ">
 <br>
 <br>
 
@@ -10,7 +13,7 @@
     
 <br>
 <br>
-    <h2><b> Capacity building programmes for citizen scientists </b></h2>
+    <p class="headings"> Capacity building programmes for citizen scientists </p>
     <hr  color="red" style="margin-left:0px; height: 5px;width:15%;">
     <br>
     <div class="row" style="background-color: #F2F2F2;padding: 10px;border-radius: 25px;">
@@ -18,11 +21,9 @@
         
         <div class="col-sm-8" >
             <br>
-            <h2 >
-                <b>Basics of Citizen science </b>
+            <p class="headings">Basics of Citizen science </p>
 
-            </h2>
-            <p class="text-justify">
+            <p class="text-justify" id="text">
                 This training programme will cover the basics of citizen science: the Importance of citizen science, data collection platforms, types of projects, 
                 project design, project management, effective outreach methods, Do’s and Don'ts, basic data collection methods, softwares and open access data sources etc. 
             </p>
@@ -36,12 +37,10 @@
     <br>
     <div class="row" style="background-color: #F2F2F2; padding: 10px;border-radius: 25px;">
         <div class="col-sm-8" >
-            <h2 >
-                <b>Taxonomy Workshops </b>
-
-            </h2>
-            <p class="text-justify">
-                Species identification workshops will be conducted through this programme. It will focus on identifying the uploaded observations on public repositories like iNaturalist. 
+            <p class="headings">Taxonomy Workshops </p>
+            <p class="text-justify" id="text">
+                Hands-on workshops on taxonomy will be carried out at the Kerala Forest Research Institute. Workshops will be focusing on capacitating young conservationists and enthusiasts on proper identification of selected taxonomic groups. Under expert guidance, 
+                participants will be encouraged to identify and scrutinise crowdsourced data available on open access platforms like iNaturalist as the hands on training for this program.   
             </p>
 
         </div>
@@ -57,11 +56,8 @@
     <div class="row" style="background-color: #F2F2F2; padding: 10px;border-radius: 25px;">        
         <div class="col-sm-8" >
             <br>
-            <h2 >
-                <b>Data management, analysis and visualisation</b>
-
-            </h2>
-            <p class="text-justify">
+            <p class="headings">Data management, analysis and visualisation</p>
+            <p class="text-justify" id="text">
                 If we are unable to interpret the data, all the effort we put into data collection will be in vain. So before designing a project you should have a clear idea of 
                 what kind of data you should be collecting, how it should be managed, what kind of output you are expecting and
                  what analysis should be carried out to interpret the data. This session will be covering the basics of biostatistics and introduction to softwares. 

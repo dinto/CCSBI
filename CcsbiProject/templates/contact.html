@@ -4,6 +4,9 @@
     {% load static %}
     
     {% block content %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href=" {% static '/css/main.css' %} ">
     <br>
 <br>
 <br>
@@ -17,34 +20,30 @@
             </div>
             <div class="col-sm-5" style="margin-top:10%;">
 
-                <h1 style="color: orange">Contact us</h1>
+                <p style="color: orange" class="headings">Contact us</p>
                 <hr >
                 <div class="row">
                     <br>
                     <div class="col-sm-7">
-                        <span  style="color: white">Centre for Citizen Science &
+                        <p  style="color: white" id="contacttext" class="text-justify">Centre for Citizen Science &
 
                             Biodiversity Informatics,
-                          </span><br><span style="color: white">
-                            
                             Kerala Forest Research Institute
-                            
-                            Peechi P.O,  Pin- 680653
-                          </span><br><span style="color: white">
+                            Peechi,  Pin-680653,
                             Thrissur , Kerala, India.
-                            </span>
+                        </p>
                             <br>
 
 
                     </div>
                     <div class="col-sm-5">
-                        <span ><a href="tel: +91 4872690272" style="color: white;"><i class="bi bi-telephone"></i> +91 4872690272</a></span>
-                        <br>
-                        <span><a href="mailto:citsci@kfri.res.in" style="color: white;"><i class="bi bi-envelope" ></i> citsci@kfri.res.in </a></span>
-                        <br>
-                        <span ><a href="mailto:ccsbi@kfri.res.in" style="color: white;"><i class="bi bi-envelope" ></i> ccsbi@kfri.res.in </a></span>
-                        <br>
-                        <span >
+                        <p id="contactdetails"><a href="tel: +91 4872690272" style="color: white;"><i class="bi bi-telephone"></i> +91 4872690272</a></p>
+
+                        <p id="contactdetails"><a href="mailto:citsci@kfri.res.in" style="color: white;"><i class="bi bi-envelope" ></i> citsci@kfri.res.in </a></p>
+
+                        <p id="contactdetails"><a href="mailto:ccsbi@kfri.res.in" style="color: white;"><i class="bi bi-envelope" ></i> ccsbi@kfri.res.in </a></p>
+
+                        <p id="contactdetails">
                             <b> <a href="https://www.facebook.com/profile.php?id=100088452392023" ><i class="bi bi-facebook"> </i></a></b>
                              &nbsp;
                              <a href="https://www.instagram.com/citsci_india/"><i class="bi bi-instagram"></i></a>
@@ -52,7 +51,7 @@
                              <a href="https://www.youtube.com/channel/UCQOj_87QKImHsRJmUUrTsDg"><i class="bi bi-youtube"></i></a>
                              &nbsp;
                              
-                         </span>
+                        </p>
                         
                         
                     </div>

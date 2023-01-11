@@ -5,6 +5,9 @@
     {% load static %}
     
     {% block content %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href=" {% static '/css/main.css' %} ">
 <style>
   
       /* For mobile phones: */
@@ -168,7 +171,7 @@
   <div class="row">
 
     <div class="col-sm-6">
-      <h2 ><b>The Fruit Bat Project</b></h2>
+      <p class="headings">The Fruit Bat Project</p>
       <div class="card " id="bat" >
         <img href = "#" id="img" src ="{% static '/images/bat1.jpg' %}" style="height: 100%;">
         <br>
@@ -186,7 +189,7 @@
 
     </div>
     <div class="col-sm-6">
-      <h2 ><b>Invasion watch India</b></h2>
+      <p class="headings">Invasion watch India</p>
       <div class="card " id="invasion">
         <img href = "#" id="img" src ="{% static '/images/invasionwatch.jpg' %}" style="height: 100%;">
         <p class="text-justify"  id="text">
@@ -205,7 +208,7 @@
   </div>
   <div class="row" style="margin-top: -40%;">
     <div class="col-sm-6">
-      <h2 ><b>Pollinator count</b></h2>
+      <p class="headings">Pollinator count</p>
       <div class="card "  id="pollinator">
         <img href = "#" src ="{% static '/images/pollinator.jpg' %}"  id="img"  style="height: 100%;">
         <br>
@@ -221,7 +224,7 @@
 
 
     <div class="col-sm-6">
-      <h2 ><b>Forest Biodiversity database</b></h2>
+      <p class="headings">Forest Biodiversity database</p>
       <div class="card " id="forestbiodiversitydatabase">
         <img href = "#" src ="{% static '/images/forestbiodiversitydatabase.jpg' %}" id="img"  style="height: 100%;">
         <p class="text-justify"  id="text">
@@ -239,7 +242,7 @@
   </div>
   <div class="row" style="margin-top: -20%;">
     <div class="col-sm-6">
-      <h2 ><b>Institutional-Biodiversity database</b></h2>
+      <p class="headings">Institutional-Biodiversity database</p>
       <div class="card " id="localbiodiversity" >
         <img href = "#" src ="{% static '/images/localbiodiversity.jpg' %}" id="img"  style="height: 100%;">
         <p class="text-justify" id="text">
