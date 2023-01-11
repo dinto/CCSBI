@@ -94,7 +94,6 @@
   .navbar {
 
     width: 100%;
-    margin-left: -1%;
   }
 </style>
 {% load static %}
@@ -104,31 +103,31 @@
     <img id="img" src="{% static '/images/headerimg1.svg' %}" style="margin-left: 5%;"  alt="...">
 
 </div>
-<div  class="container-fluid">
+<div  class="container-fluid" style="padding: 0px;">
     <nav class="navbar fixed navbar-expand-lg  navbar-dark bg-dark" style="background: linear-gradient(to right, rgb(27,63,96) , rgb(12,97,125));">
         <div class="container-fluid" style="width: 130%; padding: 0px;">
           <button
-            class="navbar-toggler navbar-toggler-right"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarExample01"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="navbar-toggler-icon"></i>
-          </button>
+          class="navbar-toggler "
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarExample01"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="navbar-toggler-icon"></i>
+        </button>
           <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 25%;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 20px;">
               
               <li class="nav-item active">
                 <a class="nav-link" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/projects">Citsci Projects</a>
+                <a class="nav-link" href="/projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Networks">Citsci Networks</a>
+                <a class="nav-link" href="/Networks">Networks</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/Datasets">Data Sets</a>
@@ -208,15 +207,9 @@
         Building a knowledgeable society is inevitable for the conservation and management of natural resources. Training the general public to explore and learn their biodiversity is the best way to do so and Citizen science can be a perfect tool for that. The Centre for Citizen Science and biodiversity informatics (CCSBI) is an initiative by the Kerala Forest Research Institute. We envision carving out a knowledgeable society of citizen scientists through outreach and capacity building, and to generate quality biodiversity data for the future management and conservation activities. 
     </p>
 
-    <div>
+
         <h2 ><b>Objectives: </b></h2>
 
-        <div class="row">
-            
-
-            
-        
-            <div  >
 
 
        
@@ -237,12 +230,10 @@
                 Collate biodiversity data from the state.
             </li>
         </ul>
-    </div>
+
     <br>
-    <p style=" font-family: Merriweather;font-size: 22px; text-align: center; color: #808080; font-weight: bold;" >We welcome you all to explore, learn and grow with us!</p>
-</div>
-        
-    </div>
+    <p style="text-align: center;  font-family: Merriweather;font-size: 22px; color: #808080; font-weight: bold;" >We welcome you all to explore, learn and grow with us!</p>
+
     <h2 style="text-align: center;"><b>Our Network & Impact</b></h2>
     <br>
     <div class="row">
