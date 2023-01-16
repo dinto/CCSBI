@@ -336,6 +336,7 @@ certificate=>create new certificate
 name: citsciindia-ssl-cert
 select create google-managed-certificate
 domains: citsciindia.in
+change domains: ccsbi.citsciindia.in
 create
 check-> Enable http to Https redirect 
 done 
@@ -345,7 +346,10 @@ create
 
 open citsciindia-load-balancer->
 copy ip 
-35.241.43.162
+#35.241.43.162
+34.110.154.44
+
+previous ip:  34.171.85.158
 change A record to this ip
 
 ssl certificate checking :
