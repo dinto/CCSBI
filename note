@@ -311,15 +311,16 @@ select  Global HTTP(S) Load Balancer
 
 click on continue
 
-name=> citsciindia-load-balancer
+name=> ccsbi-load-balancer
 
 backend configuration->create backend service->
-name:citsciindia-backend
+name:ccsbi-backend
 under health check->create health check->
-name: citsciindia-healthcheck
-protocol:http
+name: ccsbi-healthcheck
+protocol:tcp
 check-interval:30
 save 
+uncheck  cloud cdn
 
 under backend=> select instance group 
 port numbers: 80
@@ -327,18 +328,21 @@ create
 
 
 frontend configuration=>
- name:citsciindia-frontend
+ name:ccsbi-frontend
 protocol: https
-ip address=>create ip address
-name:front-end-ip-citsciindia ->click reserve
+ip address=> Ephemeral (create ip address  name:front-end-ip-citsciindia ->click reserve)
 
 certificate=>create new certificate
-name: citsciindia-ssl-cert
+name: ccsbi-ssl-cert
 select create google-managed-certificate
 domains: citsciindia.in
-change domains: ccsbi.citsciindia.in
+change domains: 
+ccsbi.citsciindia.in
+www.ccsbi.citsciindia.in
+ccsbi.kfri.res.in
+www.ccsbi.kfri.res.in
 create
-check-> Enable http to Https redirect 
+## not doing for Ephemeral    check-> Enable http to Https redirect 
 done 
 
 create
@@ -347,7 +351,7 @@ create
 open citsciindia-load-balancer->
 copy ip 
 #35.241.43.162
-34.110.154.44
+34.160.23.130
 
 previous ip:  34.171.85.158
 change A record to this ip
@@ -361,3 +365,41 @@ https verifing:
 2)check the state of google managed cert added on the front end of LB
 3)verify that frontend is using HTTPS and backend is using HTTP
 4)verify your ssl cert
+
+
+
+no healthy upstream error
+netstat -tlnp | grep 80
+
+apt-get install netcat
+netcat -z -v localhost 80
+netcat -z -v localhost 443
+
+
+check that listening to 443 port:
+sudo netstat -plnt
+
+cloud.google.com/load-balancing/docs/health-check-concepts#ip-ranges
+
+apt-get install tcpdump
+sudo tcpdump -i any net 130.211.0.0/22 or net 35.191.0.0/16
+
+curl -v localhost:80  (check 200ok is showing or not)
+
+add 35.191.0.0/16  130.211.0.0/22 to firewall
+
+cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#troubleshooting_general_connectivity_issues
+  
+
+35.224.95.128 for citsciindia.in.
+
+
+
+ip forwarding:
+cloud dns-> zone create->
+zone type: priavte
+name: citsciindiaforwarding
+DNS name : ccsbi.kfri.res.in.
+Description : citsciindia forwarding
+Type : Forwarding
+destination ip : 34.171.85.158
