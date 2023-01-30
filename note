@@ -403,3 +403,73 @@ DNS name : ccsbi.kfri.res.in.
 Description : citsciindia forwarding
 Type : Forwarding
 destination ip : 34.171.85.158
+
+
+====================
+redirect http to https by default
+=====================
+inside https load balancer 
+create new https loadbalancer:
+frontend configuration:
+name:httptohttps
+
+routing rules->check Advanced host and path rule
+action-> check redirect the client to different host/path
+path redirect-> check prefix redirect
+HTTPS redirect-> Tick enable
+done
+
+remaining no changes then create
+
+
+
+
+@media (max:width:500px){
+    css
+    }
+    @media print{
+    }
+    
+    @media(orientation: landscape){
+    
+    }
+    @media(orientation: portrait){
+    
+    }
+    
+    @media(orientation: landscape) and (max:width:500px){
+    
+    }
+    
+    mn:width:
+    
+    mobile:
+    tab: 
+    t.v:
+    print:
+    desktop:
+    
+    
+            /* Media Query for Mobile Devices */
+            @media (max-width: 480px) {
+            }
+              
+            /* Media Query for low resolution  Tablets, Ipads */
+            @media (min-width: 481px) and (max-width: 767px) {
+            }
+              
+            /* Media Query for Tablets Ipads portrait mode */
+            @media (min-width: 768px) and (max-width: 1024px){
+    
+            }
+              
+            /* Media Query for Laptops and Desktops */
+            @media (min-width: 1025px) and (max-width: 1280px){
+            }
+              
+            /* Media Query for Large screens */
+            @media (min-width: 1281px) {
+    
+            }
+    
+    
