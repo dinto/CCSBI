@@ -22,3 +22,5 @@ def Events(request):
     return render(request,'Events.html',{})
 def Opportunities(request):
     return render(request,'Opportunities.html',{})
+def Event1(request):
+    return render(request,'Event1.html',{})

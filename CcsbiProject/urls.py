@@ -12,6 +12,7 @@ urlpatterns = [
     path('Capacity', views.Capacity, name='Capacity'),
     path('Events', views.Events, name='Events'),  
     path('Opportunities', views.Opportunities, name='Opportunities'),
+    path('Event1', views.Event1, name='Event1'), 
     
 
 
