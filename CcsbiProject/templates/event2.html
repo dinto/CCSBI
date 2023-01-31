@@ -1,0 +1,206 @@
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.owl-carousel .owl-item {
+    transition: all 0.3s ease-in-out;
+}
+
+.owl-carousel .owl-item .card {
+    padding: 30px;
+    position: relative;
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow-y: auto !important;
+    padding-bottom: 40px;
+}
+
+.owl-carousel .owl-item img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.owl-carousel .owl-item .card .name {
+    position: absolute;
+    bottom: -20px;
+    left: 33%;
+    color: #101c81;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: aquamarine;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+    box-shadow: 2px 3px 15px #3c405a;
+}
+
+.owl-carousel .owl-item .card {
+    opacity: 0.2;
+    transform: scale3d(0.8, 0.8, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.owl-carousel .owl-item.active.center .card {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.owl-carousel .owl-dots {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    height: 20px;
+    background: #2a6ba3 !important;
+    border-radius: 2px !important;
+    opacity: 0.8;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    height: 13px;
+    width: 13px;
+    opacity: 1;
+    transform: translateY(2px);
+    background: #83b8e7 !important;
+}
+
+@media(min-width: 480.6px) and (max-width: 575.5px) {
+    .owl-carousel .owl-item .card .name {
+        left: 24%;
+    }
+}
+
+@media(max-width: 360px) {
+    .owl-carousel .owl-item .card .name {
+        left: 30%;
+    }
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href=" {% static '/css/main.css' %} ">
+<br>
+<br>
+<br>
+<div class="container">
+    <br>
+    <p class="headings text-center" >Biodiversity assessment workshop & introduction to ‘iNaturalist’ - a citizen science platform - Vivekananda College Kizhoor Kunnamkulam</p>
+    <p class=" text-center">Citizen Science workshop - Vivekananda College Kizhoor</p>
+    <div class="jumbotron" style=" padding-bottom: 10px !important; padding-top: 10px !important;">
+        <blockquote class="blockquote">
+            <svg viewBox="0 0 512 512" width="100" title="quote-left" class="quote-icon">
+              <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z" />
+            </svg>
+            <p class="quote">Plans to protect air and water, wilderness and nature are in fact plans to protect man. </p>
+            <p class="author">— Stewart Udall</p>
+            <hr>
+          </blockquote>
+      </div>
+    <p class="text-justify" style=" font-family: Merriweather;font-size: 22px;">
+        ‘Observation is the key to understanding biodiversity around us. Observing and recording biodiversity advances our understanding of how to protect its species. 
+        It will be easier to manage and conserve the biodiversity around us if we upskill our abilities to understand nature events and identification of various species.
+
+    </p>
+    <p class="text-justify" style=" font-family: Merriweather;font-size: 22px;">
+        Centre for Citizen Science and Biodiversity Informatics (CCSBI) organised a workshop on ‘Biodiversity assessment and introduction to ‘iNaturalist’ a citizen science platform’. 
+        This workshop was arranged in collaboration with the Nature club, Sree Vivekananda College Kizhoor, Kunnamkulam. And aimed at students and faculties 
+        who were interested in participating and organising biodiversity assessments in the campus. The workshop kicked off with a brief introduction to the ‘iNaturalist’ platform and 
+        the mobile application. 
+    </p>
+    <p class="text-justify" style=" font-family: Merriweather;font-size: 22px;">
+        The students who were equipped with the theory and the application on their smartphones were divided into groups. Each group was spearheaded by a CCSBI team member, who advised students on documenting the sightings to the application. 
+        The submitted sightings were added to a project titled ‘Biodiversity of Sree Vivekananda College, Kunnamkulam’ in iNaturalist created by the centre. 
+    </p>
+    <p class="text-justify" style=" font-family: Merriweather;font-size: 22px;">
+        Long-term updates to this project will be made through field surveys and online revisions on a regular basis.
+    </p>
+
+
+
+
+    <div class="owl-carousel owl-theme mt-5">
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="{% static '/images/Event_2.JPG' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="{% static '/images/Event_3.JPG' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="{% static '/images/Event_4.JPG' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="{% static '/images/Event_5.JPG' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="{% static '/images/Event_6.JPG' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+$(document).ready(function () {
+    var silder = $(".owl-carousel");
+    silder.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: false,
+        items: 1,
+        stagePadding: 20,
+        center: true,
+        nav: false,
+        margin: 50,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: { items: 1 },
+            480: { items: 2 },
+            575: { items: 2 },
+            768: { items: 2 },
+            991: { items: 3 }
+        }
+    });
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+{% endblock content %}
