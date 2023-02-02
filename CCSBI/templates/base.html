@@ -45,31 +45,31 @@
                   <!--!-->
                   <img src="{% static '/images/CCSBI logo 2.png' %}"  width="11%"  style="margin-left: -5%;"   alt="...">
                 
-                  <li class="nav-item active">
+                  <li class="nav-item {% if navbar == 'home' %} active {% endif %}">
                     <a class="nav-link" aria-current="page" href="/home">Home</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'project' %} active {% endif %}">
                     <a class="nav-link" href="/projects">Projects</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'network' %} active {% endif %}">
                     <a class="nav-link" href="/Networks">Networks</a>
                   </li>
                  <!--  <li class="nav-item">
                     <a class="nav-link" href="/Datasets">Data Sets</a>
                   </li>!-->
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'resource' %} active {% endif %}">
                     <a class="nav-link" href="/Resources">Resources </a>
                   </li>                  
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'capacity' %} active {% endif %}">
                     <a class="nav-link" href="/Capacity">Capacity Building</a>
                   </li>                    
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'event' %} active {% endif %}">
                     <a class="nav-link" href="/Events">Events</a>
                   </li>                  
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'opportunities' %} active {% endif %}">
                     <a class="nav-link" href="/Opportunities">Opportunities</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {% if navbar == 'contact' %} active {% endif %}">
                     <a class="nav-link" href="/contact">Contact</a>
                   </li>
 
