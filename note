@@ -304,7 +304,9 @@ select "new unmanaged instance group"
 name:citsciindia-instance-group
 select vm instance->create
 
-
+=----------------
+below steps repeating
+=----------------
 network services-> create load balancer=>start configuration (under https load balancing)=>
 select  From Internet to my VMs or serverless services
 select  Global HTTP(S) Load Balancer
@@ -405,13 +407,14 @@ Type : Forwarding
 destination ip : 34.171.85.158
 
 
-====================
-redirect http to https by default
-=====================
+=========================================
+redirect http to https by default if not create automatically
+==========================================
 inside https load balancer 
 create new https loadbalancer:
 frontend configuration:
 name:httptohttps
+select IP address as given static ip
 
 routing rules->check Advanced host and path rule
 action-> check redirect the client to different host/path
@@ -419,8 +422,10 @@ path redirect-> check prefix redirect
 HTTPS redirect-> Tick enable
 done
 
-remaining no changes then create
+No Backend configuration
 
+remaining no changes then create
+==========================================
 
 
 
@@ -471,5 +476,138 @@ remaining no changes then create
             @media (min-width: 1281px) {
     
             }
-    
-    
+
+
+
+
+====================================
+repeating https load balancer
+===================================
+
+network services-> create load balancer=>start configuration (under https load balancing)=>
+select  From Internet to my VMs or serverless services
+select  Global HTTP(S) Load Balancer
+
+click on continue
+
+name=> ccsbi-load-balancer-staticip
+
+backend configuration->create backend service->
+name:ccsbi-backend-staticip
+under health check->create health check->
+name: ccsbi-healthcheck
+protocol:tcp
+check-interval:30
+save 
+uncheck  cloud cdn
+
+under backend=> select instance group 
+port numbers: 80
+create
+
+
+frontend configuration=>
+ name:ccsbi-staticip-frontend
+protocol: https
+ip address=> create ip address  name:ccsbi-staticip-frontend ->click reserve
+
+certificate=>create new certificate
+name: ccsbicitsciindia
+select create google-managed-certificate
+domains: citsciindia.in
+change domains: 
+ccsbi.citsciindia.in
+www.ccsbi.citsciindia.in
+ccsbi.kfri.res.in
+www.ccsbi.kfri.res.in
+create   
+check-> Enable http to Https redirect 
+done 
+
+create
+--------
+automatically redirect created bcz of check enable http to https redirect:
+ccsbi-staticip-frontend-redirect
+
+
+open citsciindia-load-balancer->
+copy ip 
+#35.241.43.162
+#34.160.23.130  #old httpsloadbalancer
+34.120.80.164 #staticip 
+
+
+previous ip:  34.171.85.158
+change A record to this ip(34.120.80.164)
+
+ssl certificate checking :
+https://www.ssllabs.com/ssltest/analyze.html?
+
+ccsbi.citsciindia.in given ssl certificate verified
+
+
+https verifing:
+1)verify your website pointing towards frontend LB
+2)check the state of google managed cert added on the front end of LB
+3)verify that frontend is using HTTPS and backend is using HTTP
+4)verify your ssl cert
+
+
+=======================================================================================================================================
+error finding un healthy
+=======================================================================================================================================
+no healthy upstream error
+netstat -tlnp | grep 80
+
+apt-get install netcat
+netcat -z -v localhost 80
+netcat -z -v localhost 443
+
+
+check that listening to 443 port:
+sudo netstat -plnt
+
+cloud.google.com/load-balancing/docs/health-check-concepts#ip-ranges
+
+apt-get install tcpdump
+sudo tcpdump -i any net 130.211.0.0/22 or net 35.191.0.0/16
+
+curl -v localhost:80  (check 200ok is showing or not)
+
+add 35.191.0.0/16  130.211.0.0/22 to firewall
+
+cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#troubleshooting_general_connectivity_issues
+  
+=======================================================================================================================================
+
+
+
+ip forwarding:
+cloud dns-> zone create->
+zone type: priavte
+name: citsciindiaforwarding
+DNS name : ccsbi.kfri.res.in.
+Description : citsciindia forwarding
+Type : Forwarding
+destination ip : 34.171.85.158
+
+
+=========================================
+redirect http to https by default if not create automatically
+==========================================
+inside https load balancer 
+create new https loadbalancer:
+frontend configuration:
+name:httptohttps
+select IP address as given static ip
+
+routing rules->check Advanced host and path rule
+action-> check redirect the client to different host/path
+path redirect-> check prefix redirect
+HTTPS redirect-> Tick enable
+done
+
+No Backend configuration
+
+remaining no changes then create
+==========================================
