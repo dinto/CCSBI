@@ -25,4 +25,4 @@ def Opportunities(request):
 def Event1(request):
     return render(request,'Event1.html',{'navbar':'event'})
 def Event2(request):
-    return render(request,'Event2.html',{'navbar':'event'})
+    return render(request,'event2.html',{'navbar':'event'})
