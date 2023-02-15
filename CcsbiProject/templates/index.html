@@ -152,6 +152,30 @@
 	display: block;
 }
 
+.typewriter {
+  color: black;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  /*animation: 
+    typing 7.5s steps(30, end),
+    blink-caret .5s step-end 1;*/
+  animation: typing 7.5s steps(30,end) .5s 1 normal both;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 672px }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
 
 </style>
 
@@ -286,7 +310,7 @@
         </ul>
 
     <br>
-    <p style="text-align: center;  font-family: Merriweather;font-size: 22px; color: #808080; font-weight: bold;" >We welcome you to explore, learn and grow with us!</p>
+    <p style="text-align: center;  font-family: Merriweather;font-size: 22px; color: #808080; font-weight: bold;" class="typewriter">We welcome you to explore, learn and grow with us!</p>
 
     <p class="headings" style="text-align: center;">Our Network & Impact</p>
     <br>
